@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon GID Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Pokémon GID Generator</h1>
+    <input type="text" id="PokemonName" placeholder="Enter Pokémon Name">
+    <button id="fetchButton">Fetch Pokémon</button><br>
+    
+    <!-- Error Message -->
+    <p id="ErrorMessage" class="error-message"></p>
+    
+    <div class="card" id="PokemonCard" style="display: none;">
+        <img src="" alt="Pokemon Sprite" id="PokemonSprite">
+        <h2 id="PokemonTitle"></h2>
+        <p><strong>ID:</strong> <span id="PokemonID"></span></p>
+        <p><strong>Weight:</strong> <span id="PokemonWeight"></span> kg</p>
+        <p><strong>Height:</strong> <span id="PokemonHeight"></span> m</p>
+    </div>
+    
+    <script src="Pokemon.js"></script>
+</body>
+</html>
