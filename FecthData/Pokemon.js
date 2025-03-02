@@ -60,26 +60,22 @@ async function FetchData() {
 
         const data = await response.json();
 
-        // Populate Data
         document.getElementById("PokemonSprite").src = data.sprites.front_default;
         document.getElementById("PokemonTitle").textContent = name.toUpperCase();
         document.getElementById("PokemonID").textContent = data.id;
-        document.getElementById("PokemonWeight").textContent = data.weight / 10; // Convert to kg
-        document.getElementById("PokemonHeight").textContent = data.height / 10; // Convert to m
+        document.getElementById("PokemonWeight").textContent = data.weight / 10; 
+        document.getElementById("PokemonHeight").textContent = data.height / 10;
         card.style.display = "block";
 
-        // Hide Error Message if Successful
         errorMessage.style.display = "none";
 
     } catch (error) {
-        // Display Error Message
         document.getElementById("ErrorMessage").textContent = error.message;
         document.getElementById("ErrorMessage").style.display = "block";
-        document.getElementById("PokemonCard").style.display = "none"; // Hide card if error
+        document.getElementById("PokemonCard").style.display = "none"; 
     }
 }
 
-// Add Enter Key Event Listener
 document.getElementById("PokemonName").addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
         event.preventDefault();
@@ -87,5 +83,4 @@ document.getElementById("PokemonName").addEventListener("keypress", function(eve
     }
 });
 
-// Add Click Event to Button
 document.getElementById("fetchButton").addEventListener("click", FetchData);
